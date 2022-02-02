@@ -1,0 +1,68 @@
+
+Question 5: 
+	- Write a Java program to find the sum of two arrays elements?
+		array1[] = {10, 20, 30, 40, 50};  // Take values form Keyboard
+		array2[] = {9, 18, 27, 36, 45};	 //  Take Values form keyboard
+
+Answer:->
+package practicequestions;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SumOfTwoArrays {
+
+	public static void main(String[] args) {
+		int array1Size;
+		int array2Size;
+		int sum = 0;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter number of elements in first array: ");
+		array1Size = sc.nextInt();
+		System.out.print("Enter number of elements in second array: ");
+		array2Size = sc.nextInt();
+		if (array1Size != array2Size) {
+			System.out.println("Both array must have same number of elements");
+			return;
+		}
+
+		int[] firstArray = new int[array1Size];
+		int[] secArray = new int[array2Size];
+		int[] thirdArray = new int[array2Size];
+		System.out.println("Enter first array elements: ");
+
+		for (int i = 0; i < firstArray.length; i++) {
+			firstArray[i] = sc.nextInt();
+		}
+		System.out.println("Enter second array elements: ");
+
+		for (int i = 0; i < secArray.length; i++) {
+			secArray[i] = sc.nextInt();
+
+		}
+		for (int i = 0; i < thirdArray.length; i++) {
+			thirdArray[i] = firstArray[i] + secArray[i];
+		}
+
+		System.out.println("Sum of Two Arrays Are" + Arrays.toString(thirdArray));
+	}
+
+}
+Output:->
+Enter number of elements in first array: 6
+Enter number of elements in second array: 6
+Enter first array elements: 
+10
+20
+30
+40
+50
+60
+Enter second array elements: 
+9
+18
+27
+39
+45
+54
+Sum of Two Arrays Are[19, 38, 57, 79, 95, 114]

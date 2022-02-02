@@ -1,0 +1,63 @@
+Question 2: Follow naming convention rule
+	
+	- Write a program to find the sum and product of all elements of an array.
+
+Answer:->
+        package practicequestions;
+
+        import java.util.Scanner;
+
+        class SumAndProductOfArrayEle {
+	public void chkSumAndProduct(int arraySize) {
+
+		int sumOfArray = 0;
+		int productOfArray = 1;
+		Scanner sc = new Scanner(System.in);
+		int sumAndProductOfArray[] = new int[arraySize];
+		System.out.println("Enter The Array Element:");
+		System.out.println();
+		for (int i = 0; i < arraySize; i++) {
+			System.out.println("Enter the " + i + " " + "element");
+			sumAndProductOfArray[i] = sc.nextInt();
+		}
+
+		for (int i = 0; i < arraySize; i++) {
+			sumOfArray = sumOfArray + sumAndProductOfArray[i];
+			productOfArray = productOfArray * sumAndProductOfArray[i];
+		}
+		System.out.println("Addition of given Array elements is:" + sumOfArray);
+		System.out.println("product of given array element is:" + productOfArray);
+
+	}
+}
+
+public class PrintSumAndProduct {
+
+	public static void main(String[] args) {
+		int arraySize;
+		SumAndProductOfArrayEle obj = new SumAndProductOfArrayEle();
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("How Many Elements You Want To Enter");
+		arraySize = sc.nextInt();
+		obj.chkSumAndProduct(arraySize);
+	}
+}
+Output:->
+How Many Elements You Want To Enter
+5
+Enter The Array Element:
+
+Enter the 0 element
+1
+Enter the 1 element
+2
+Enter the 2 element
+3
+Enter the 3 element
+4
+Enter the 4 element
+5
+Addition of given Array elements is:15
+product of given array element is:120
+

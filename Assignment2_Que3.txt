@@ -1,0 +1,67 @@
+Question 3: Follow naming convention rule
+	
+	- Write a program to check if elements of an array are same or not it read from front or back. E.g.
+		 int[] a = {2,3,15,15,3,2};
+  
+Amswer:->
+
+       package practicequestions;
+
+       import java.util.Arrays;
+       import java.util.Scanner;
+
+        public class FindArrayEleSameOrNot {
+
+	public static void main(String[] args) {
+
+		boolean flag = false;
+		int arraySize;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("enetr the  elements that stored in integer array:");
+		arraySize = sc.nextInt();
+
+		int[] arraySameOrNot = new int[arraySize];
+		int[] revArraySameOrNot = new int[arraySize];
+		for (int i = 0; i < arraySameOrNot.length; i++) {
+			arraySameOrNot[i] = sc.nextInt();
+		}
+		System.out.println(" Array elements are:");
+		System.out.println(Arrays.toString(arraySameOrNot));
+		int j = arraySameOrNot.length - 1;
+		for (int i = 0; i < arraySameOrNot.length; i++, j--) {
+			revArraySameOrNot[j] = arraySameOrNot[i];
+
+		}
+
+		for (int i = 0; i <= revArraySameOrNot.length - 1; i++) {
+			if (arraySameOrNot[i] == revArraySameOrNot[i]) {
+				flag = true;
+			} else {
+				flag = false;
+			}
+		}
+		if (flag == true) {
+			System.out.println("Elements of an array are same");
+		} else {
+			System.out.println("Elements of an array are not same:");
+		}
+
+		System.out.println(Arrays.toString(arraySameOrNot));
+
+	}
+
+}
+Output:->
+enetr the  elements that stored in integer array:
+6
+2
+3
+15
+15
+3
+2
+ Array elements are:
+[2, 3, 15, 15, 3, 2]
+Elements of an array are same
+[2, 3, 15, 15, 3, 2]
+
